@@ -1,0 +1,593 @@
+2020-07-10 10:32:03.823  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Starting EzposApplication on LAPTOP-33UC8H82 with PID 18680 (D:\Development\PERSONALMWDM\ezpos\target\classes started by aye.wai in D:\Development\PERSONALMWDM\ezpos)
+2020-07-10 10:32:03.836 DEBUG LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 10:32:03.837  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : The following profiles are active: dev
+2020-07-10 10:32:03.944  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-10 10:32:03.945  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-10 10:32:04.951 ERROR LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.SpringApplication                  : Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.java.sample.ezpos.EzposApplication.main(EzposApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.java.sample.ezpos.config.CacisMessageResource] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@618e946f]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:743)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:742)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:649)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1608)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:495)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:230)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:223)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:213)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:167)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:142)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 23 more
+Caused by: java.lang.NoClassDefFoundError: javax/validation/ValidatorFactory
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:144)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 39 more
+Caused by: java.lang.ClassNotFoundException: javax.validation.ValidatorFactory
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 59 more
+2020-07-10 10:32:04.971  WARN LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.SpringApplication                  : Unable to close ApplicationContext
+java.lang.IllegalStateException: Failed to introspect Class [com.java.sample.ezpos.config.CacisMessageResource] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@618e946f]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:743)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:742)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:649)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1608)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:495)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:617)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1243)
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:880)
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:868)
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:855)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:806)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.java.sample.ezpos.EzposApplication.main(EzposApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.NoClassDefFoundError: javax/validation/ValidatorFactory
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:144)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: javax.validation.ValidatorFactory
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 46 more
+2020-07-10 10:37:48.791  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Starting EzposApplication on LAPTOP-33UC8H82 with PID 11164 (D:\Development\PERSONALMWDM\ezpos\target\classes started by aye.wai in D:\Development\PERSONALMWDM\ezpos)
+2020-07-10 10:37:48.802 DEBUG LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 10:37:48.803  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : The following profiles are active: dev
+2020-07-10 10:37:48.872  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-10 10:37:48.873  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-10 10:37:49.683 ERROR LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.SpringApplication                  : Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.java.sample.ezpos.EzposApplication.main(EzposApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.java.sample.ezpos.config.CacisMessageResource] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@1abe3f67]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:743)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:742)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:649)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1608)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:495)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:230)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:223)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:213)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:167)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:142)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 23 more
+Caused by: java.lang.NoClassDefFoundError: javax/validation/ValidatorFactory
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:144)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 39 more
+Caused by: java.lang.ClassNotFoundException: javax.validation.ValidatorFactory
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 59 more
+2020-07-10 10:37:49.695  WARN LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.SpringApplication                  : Unable to close ApplicationContext
+java.lang.IllegalStateException: Failed to introspect Class [com.java.sample.ezpos.config.CacisMessageResource] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@1abe3f67]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:743)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:742)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:649)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1608)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:495)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:617)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1243)
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:880)
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:868)
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:855)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:806)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.java.sample.ezpos.EzposApplication.main(EzposApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.NoClassDefFoundError: javax/validation/ValidatorFactory
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:144)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: javax.validation.ValidatorFactory
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 46 more
+2020-07-10 10:45:05.438  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Starting EzposApplication on LAPTOP-33UC8H82 with PID 12600 (D:\Development\PERSONALMWDM\ezpos\target\classes started by aye.wai in D:\Development\PERSONALMWDM\ezpos)
+2020-07-10 10:45:05.454 DEBUG LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 10:45:05.456  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : The following profiles are active: dev
+2020-07-10 10:45:05.540  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-10 10:45:05.540  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-10 10:45:07.718  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-07-10 10:45:08.110 ERROR LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.SpringApplication                  : Application run failed
+java.lang.NoClassDefFoundError: org/springframework/security/jwt/crypto/sign/Signer
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2671)
+	at java.lang.Class.getDeclaredConstructors(Class.java:2020)
+	at org.springframework.boot.context.properties.ConfigurationPropertiesBindConstructorProvider.findConstructorBindingAnnotatedConstructor(ConfigurationPropertiesBindConstructorProvider.java:62)
+	at org.springframework.boot.context.properties.ConfigurationPropertiesBindConstructorProvider.getBindConstructor(ConfigurationPropertiesBindConstructorProvider.java:48)
+	at org.springframework.boot.context.properties.ConfigurationPropertiesBean$BindMethod.forType(ConfigurationPropertiesBean.java:311)
+	at org.springframework.boot.context.properties.ConfigurationPropertiesBeanDefinitionValidator.validate(ConfigurationPropertiesBeanDefinitionValidator.java:63)
+	at org.springframework.boot.context.properties.ConfigurationPropertiesBeanDefinitionValidator.postProcessBeanFactory(ConfigurationPropertiesBeanDefinitionValidator.java:45)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:291)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:175)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.java.sample.ezpos.EzposApplication.main(EzposApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.ClassNotFoundException: org.springframework.security.jwt.crypto.sign.Signer
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 25 more
+2020-07-10 10:58:08.560  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Starting EzposApplication on LAPTOP-33UC8H82 with PID 14048 (D:\Development\PERSONALMWDM\ezpos\target\classes started by aye.wai in D:\Development\PERSONALMWDM\ezpos)
+2020-07-10 10:58:08.575 DEBUG LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 10:58:08.576  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : The following profiles are active: dev
+2020-07-10 10:58:08.650  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-10 10:58:08.651  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-10 10:58:10.682  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-07-10 10:58:11.142  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$db60c656] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 10:58:11.208  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-07-10 10:58:11.265  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@703d03bd' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 10:58:11.436  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 10:58:13.058  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2020-07-10 10:58:13.077  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-10 10:58:13.079  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-07-10 10:58:13.079  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-10 10:58:13.286  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.C.[.[.[/EzPosAPI]                : Initializing Spring embedded WebApplicationContext
+2020-07-10 10:58:13.287  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4636 ms
+2020-07-10 10:58:13.688  WARN LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.o.p.t.s.JwtAccessTokenConverter    : Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2020-07-10 10:58:15.081  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-07-10 10:58:15.754  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/v2/api-docs'], []
+2020-07-10 10:58:15.755  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/swagger-resources'], []
+2020-07-10 10:58:15.755  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='**/swagger-resources/**'], []
+2020-07-10 10:58:15.755  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/configuration/ui'], []
+2020-07-10 10:58:15.755  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/configuration/security'], []
+2020-07-10 10:58:15.756  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2020-07-10 10:58:15.756  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-07-10 10:58:15.756  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/v2/**'], []
+2020-07-10 10:58:15.756  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/user'], []
+2020-07-10 10:58:15.756  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/product'], []
+2020-07-10 10:58:15.836  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/ezposadmin/v1.0/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@100a4a80, org.springframework.security.web.context.SecurityContextPersistenceFilter@40a953f4, org.springframework.security.web.header.HeaderWriterFilter@4ecb1046, org.springframework.security.web.authentication.logout.LogoutFilter@142cd15b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@10e1517e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51792438, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78c54bc6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27095302, org.springframework.security.web.session.SessionManagementFilter@fdd1d4b, org.springframework.security.web.access.ExceptionTranslationFilter@34a58a65, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12c09042]
+2020-07-10 10:58:15.856  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/ezposadmin/**'], Ant [pattern='/user/v1.0/**'], Ant [pattern='/product/v1.0/**'], Ant [pattern='/authentication/v1.0/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61973c28, org.springframework.security.web.context.SecurityContextPersistenceFilter@6552e67f, org.springframework.security.web.header.HeaderWriterFilter@dbfecb0, org.springframework.security.web.authentication.logout.LogoutFilter@7cdfdfe9, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@201258d4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ec894f6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c6031f3, org.springframework.security.web.session.SessionManagementFilter@6f91bbed, org.springframework.security.web.access.ExceptionTranslationFilter@3c98ff3c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@373af5bb]
+2020-07-10 10:58:15.860  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1eee55e0, org.springframework.security.web.context.SecurityContextPersistenceFilter@19435a4c, org.springframework.security.web.header.HeaderWriterFilter@3353c4b4, org.springframework.security.web.authentication.logout.LogoutFilter@6bee97b8, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7a238934, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38253f3e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15fe2aea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17150d45, org.springframework.security.web.session.SessionManagementFilter@3ec876e2, org.springframework.security.web.access.ExceptionTranslationFilter@6688e9eb]
+2020-07-10 10:58:15.962  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-10 10:58:16.003  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-10 10:58:16.361  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2020-07-10 10:58:16.418  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path '/EzPosAPI'
+2020-07-10 10:58:16.419  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-07-10 10:58:16.472  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-07-10 10:58:16.576  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-07-10 10:58:16.622  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Started EzposApplication in 8.821 seconds (JVM running for 10.111)
+2020-07-10 10:59:36.017  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Starting EzposApplication on LAPTOP-33UC8H82 with PID 24512 (D:\Development\PERSONALMWDM\ezpos\target\classes started by aye.wai in D:\Development\PERSONALMWDM\ezpos)
+2020-07-10 10:59:36.028 DEBUG LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 10:59:36.029  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : The following profiles are active: dev
+2020-07-10 10:59:36.085  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-10 10:59:36.085  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-10 10:59:37.187  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-07-10 10:59:37.440  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$fca7232f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 10:59:37.467  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-07-10 10:59:37.506  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1007b67b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 10:59:37.513  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 10:59:38.596  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 9003 (http)
+2020-07-10 10:59:38.610  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-9003"]
+2020-07-10 10:59:38.611  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-07-10 10:59:38.611  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-10 10:59:38.798  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.C.[.[.[/EzPosAPI]                : Initializing Spring embedded WebApplicationContext
+2020-07-10 10:59:38.798  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2712 ms
+2020-07-10 10:59:39.219  WARN LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.o.p.t.s.JwtAccessTokenConverter    : Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2020-07-10 10:59:40.402  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-07-10 10:59:41.080  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/v2/api-docs'], []
+2020-07-10 10:59:41.081  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/swagger-resources'], []
+2020-07-10 10:59:41.081  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='**/swagger-resources/**'], []
+2020-07-10 10:59:41.081  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/configuration/ui'], []
+2020-07-10 10:59:41.081  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/configuration/security'], []
+2020-07-10 10:59:41.081  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2020-07-10 10:59:41.081  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-07-10 10:59:41.082  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/v2/**'], []
+2020-07-10 10:59:41.082  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/user'], []
+2020-07-10 10:59:41.082  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/product'], []
+2020-07-10 10:59:41.140  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/ezposadmin/v1.0/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1d5c84bc, org.springframework.security.web.context.SecurityContextPersistenceFilter@29d078ef, org.springframework.security.web.header.HeaderWriterFilter@16d53009, org.springframework.security.web.authentication.logout.LogoutFilter@344fef89, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1ea5ae62, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7cc19a0c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c071ed6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d170334, org.springframework.security.web.session.SessionManagementFilter@3c5e2cf8, org.springframework.security.web.access.ExceptionTranslationFilter@55a5c4d5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d4c3f02]
+2020-07-10 10:59:41.156  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/ezposadmin/**'], Ant [pattern='/user/v1.0/**'], Ant [pattern='/product/v1.0/**'], Ant [pattern='/authentication/v1.0/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@703c96b1, org.springframework.security.web.context.SecurityContextPersistenceFilter@2593bc07, org.springframework.security.web.header.HeaderWriterFilter@785706cb, org.springframework.security.web.authentication.logout.LogoutFilter@73ad97e4, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@43da181, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11d592b8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51f4af17, org.springframework.security.web.session.SessionManagementFilter@61af74f6, org.springframework.security.web.access.ExceptionTranslationFilter@13f4e0c5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2adf25c9]
+2020-07-10 10:59:41.160  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c3d75eb, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a3422e5, org.springframework.security.web.header.HeaderWriterFilter@63c068c2, org.springframework.security.web.authentication.logout.LogoutFilter@6b1f4988, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@31a03932, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66679041, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6816237, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27729aa9, org.springframework.security.web.session.SessionManagementFilter@36e20658, org.springframework.security.web.access.ExceptionTranslationFilter@73dff002]
+2020-07-10 10:59:41.253  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-10 10:59:41.293  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-10 10:59:41.655  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-9003"]
+2020-07-10 10:59:41.705  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 9003 (http) with context path '/EzPosAPI'
+2020-07-10 10:59:41.707  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-07-10 10:59:41.751  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-07-10 10:59:41.851  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-07-10 10:59:41.887  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Started EzposApplication in 6.344 seconds (JVM running for 7.318)
+2020-07-10 11:01:11.267  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Starting EzposApplication on LAPTOP-33UC8H82 with PID 18788 (D:\Development\PERSONALMWDM\ezpos\target\classes started by aye.wai in D:\Development\PERSONALMWDM\ezpos)
+2020-07-10 11:01:11.282 DEBUG LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 11:01:11.283  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : The following profiles are active: dev
+2020-07-10 11:01:11.373  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-10 11:01:11.374  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-10 11:01:13.822  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$ec22da89] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 11:01:13.921  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-07-10 11:01:14.311  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@62647f01' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 11:01:14.325  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 11:01:15.756  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 9003 (http)
+2020-07-10 11:01:15.773  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-9003"]
+2020-07-10 11:01:15.774  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-07-10 11:01:15.774  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-10 11:01:15.969  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.C.[.[.[/EzPosAPI]                : Initializing Spring embedded WebApplicationContext
+2020-07-10 11:01:15.969  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4595 ms
+2020-07-10 11:01:16.371  WARN LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.o.p.t.s.JwtAccessTokenConverter    : Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2020-07-10 11:01:17.528  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-07-10 11:01:18.069  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/v2/api-docs'], []
+2020-07-10 11:01:18.069  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/swagger-resources'], []
+2020-07-10 11:01:18.070  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='**/swagger-resources/**'], []
+2020-07-10 11:01:18.070  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/configuration/ui'], []
+2020-07-10 11:01:18.070  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/configuration/security'], []
+2020-07-10 11:01:18.071  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2020-07-10 11:01:18.071  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-07-10 11:01:18.071  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/v2/**'], []
+2020-07-10 11:01:18.071  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/user'], []
+2020-07-10 11:01:18.071  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/product'], []
+2020-07-10 11:01:18.141  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/ezposadmin/v1.0/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c50cccd, org.springframework.security.web.context.SecurityContextPersistenceFilter@707a5edd, org.springframework.security.web.header.HeaderWriterFilter@8e38ee1, org.springframework.security.web.authentication.logout.LogoutFilter@67f0a922, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3d1cb0a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4153631b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a8493d7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@562d1942, org.springframework.security.web.session.SessionManagementFilter@36ef1930, org.springframework.security.web.access.ExceptionTranslationFilter@699ab323, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@47fc80d0]
+2020-07-10 11:01:18.159  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/ezposadmin/**'], Ant [pattern='/user/v1.0/**'], Ant [pattern='/product/v1.0/**'], Ant [pattern='/authentication/v1.0/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e3bdebd, org.springframework.security.web.context.SecurityContextPersistenceFilter@1801d451, org.springframework.security.web.header.HeaderWriterFilter@6ed5bf33, org.springframework.security.web.authentication.logout.LogoutFilter@359cca85, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@5e11c6ed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a7d5282, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59925ad9, org.springframework.security.web.session.SessionManagementFilter@1e8c89a7, org.springframework.security.web.access.ExceptionTranslationFilter@1fa3abb8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7ab58b64]
+2020-07-10 11:01:18.163  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@735951c0, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f07bdf3, org.springframework.security.web.header.HeaderWriterFilter@3c877627, org.springframework.security.web.authentication.logout.LogoutFilter@7f76868d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@480d8531, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51ccd012, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@567da242, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7cedf257, org.springframework.security.web.session.SessionManagementFilter@5a2c2cd3, org.springframework.security.web.access.ExceptionTranslationFilter@275b3ddc]
+2020-07-10 11:01:18.259  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-10 11:01:18.293  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-10 11:01:18.654  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-9003"]
+2020-07-10 11:01:18.709  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 9003 (http) with context path '/EzPosAPI'
+2020-07-10 11:01:18.711  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-07-10 11:01:18.768  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-07-10 11:01:18.869  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-07-10 11:01:18.910  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Started EzposApplication in 8.366 seconds (JVM running for 9.615)
+2020-07-10 21:05:38.382  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Starting EzposApplication on LAPTOP-33UC8H82 with PID 12940 (D:\Development\PERSONALMWDM\ezpos\target\classes started by aye.wai in D:\Development\PERSONALMWDM\ezpos)
+2020-07-10 21:05:38.406 DEBUG LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 21:05:38.408  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : The following profiles are active: dev
+2020-07-10 21:05:38.562  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-10 21:05:38.563  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-10 21:05:42.033  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$837135da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 21:05:42.098  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-07-10 21:05:42.166  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5236e91' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 21:05:42.175  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-10 21:05:43.758  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 9003 (http)
+2020-07-10 21:05:43.779  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-9003"]
+2020-07-10 21:05:43.780  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-07-10 21:05:43.781  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-10 21:05:43.985  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.c.C.[.[.[/EzPosAPI]                : Initializing Spring embedded WebApplicationContext
+2020-07-10 21:05:43.985  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5421 ms
+2020-07-10 21:05:44.550  WARN LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.o.p.t.s.JwtAccessTokenConverter    : Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2020-07-10 21:05:45.986  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-07-10 21:05:46.810  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/v2/api-docs'], []
+2020-07-10 21:05:46.810  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/swagger-resources'], []
+2020-07-10 21:05:46.811  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='**/swagger-resources/**'], []
+2020-07-10 21:05:46.811  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/configuration/ui'], []
+2020-07-10 21:05:46.811  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/configuration/security'], []
+2020-07-10 21:05:46.812  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2020-07-10 21:05:46.812  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-07-10 21:05:46.812  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/v2/**'], []
+2020-07-10 21:05:46.812  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/user'], []
+2020-07-10 21:05:46.813  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: Ant [pattern='/product'], []
+2020-07-10 21:05:46.895  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/ezposadmin/v1.0/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@119ed8b4, org.springframework.security.web.context.SecurityContextPersistenceFilter@18b75f9f, org.springframework.security.web.header.HeaderWriterFilter@467d8066, org.springframework.security.web.authentication.logout.LogoutFilter@759e234f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6b1ee826, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15d95481, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3cffc8e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7462efd1, org.springframework.security.web.session.SessionManagementFilter@11555720, org.springframework.security.web.access.ExceptionTranslationFilter@535f220, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@281f7256]
+2020-07-10 21:05:46.918  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/ezposadmin/**'], Ant [pattern='/user/v1.0/**'], Ant [pattern='/product/v1.0/**'], Ant [pattern='/authentication/v1.0/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d4dcc46, org.springframework.security.web.context.SecurityContextPersistenceFilter@3fd2da07, org.springframework.security.web.header.HeaderWriterFilter@2e821ad1, org.springframework.security.web.authentication.logout.LogoutFilter@73cbd7f4, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@2ebb75cb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@408f4747, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ee58915, org.springframework.security.web.session.SessionManagementFilter@4fbd638f, org.springframework.security.web.access.ExceptionTranslationFilter@6a62a802, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4505d659]
+2020-07-10 21:05:46.923  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6d2b1384, org.springframework.security.web.context.SecurityContextPersistenceFilter@27b09509, org.springframework.security.web.header.HeaderWriterFilter@7233f313, org.springframework.security.web.authentication.logout.LogoutFilter@362bcbff, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@342cf84c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e8380c6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7345536e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@784abe6c, org.springframework.security.web.session.SessionManagementFilter@66e00a7d, org.springframework.security.web.access.ExceptionTranslationFilter@5d78ba2]
+2020-07-10 21:05:47.023  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-10 21:05:47.065  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-10 21:05:47.425  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-9003"]
+2020-07-10 21:05:47.472  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 9003 (http) with context path '/EzPosAPI'
+2020-07-10 21:05:47.473  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-07-10 21:05:47.524  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-07-10 21:05:47.630  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-07-10 21:05:47.669  INFO LAPTOP-33UC8H82 -  -  -  -- [  restartedMain] c.j.s.e.EzposApplication                 : Started EzposApplication in 10.73 seconds (JVM running for 12.47)
+2020-07-10 21:05:53.224  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-1] o.a.c.c.C.[.[.[/EzPosAPI]                : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-10 21:05:53.225  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2020-07-10 21:05:53.236  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 11 ms
+2020-07-10 21:05:53.436  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-1] c.j.s.e.f.LogMDCFilter                   : In LogMDCFilter doFilter Order 1
+2020-07-10 21:05:53.446  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.f.LogMDCFilter                   : LogMDCFilter do filter after assign the MDC records
+2020-07-10 21:05:53.446  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.f.APIDBLogMACFilter              : In APIDBLogFilter doFilter  Order 3
+2020-07-10 21:05:53.453  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.g.i.GeoServiceImpl               : GlobalConfiguration.geoFileLoaded :: false
+2020-07-10 21:05:53.453  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.g.i.GeoServiceImpl               : load the Geo File
+2020-07-10 21:05:53.453  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.g.i.GeoServiceImpl               : in loadGeo
+2020-07-10 21:05:53.453  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.g.i.GeoServiceImpl               : file D:\Development\PERSONALMWDM\ezpos\src\main\resources\location\GeoLite2-City.mmdb
+2020-07-10 21:05:53.453  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.g.i.GeoServiceImpl               : getAbsolutePath D:\Development\PERSONALMWDM\ezpos\src\main\resources\location\GeoLite2-City.mmdb
+2020-07-10 21:05:53.455  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.g.i.GeoServiceImpl               : getCanonicalPath D:\Development\PERSONALMWDM\ezpos\src\main\resources\location\GeoLite2-City.mmdb
+2020-07-10 21:05:53.484 ERROR LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.f.APIDBLogMACFilter              : com.maxmind.geoip2.exception.AddressNotFoundException: The address 0:0:0:0:0:0:0:1 is not in the database.
+2020-07-10 21:05:53.484  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.f.APIDBLogMACFilter              : Invalid Geo Locatoin Info
+2020-07-10 21:05:53.493 ERROR LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.s.i.HeaderFilterServiceImpl      : java.lang.NullPointerException
+2020-07-10 21:05:53.495 ERROR LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.u.ServiceUtil                    : getFilterErrorMap Error :: Error on dateTimeValidation
+2020-07-10 21:05:53.590  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.f.APIDBLogMACFilter              : response Time in milli Secs in APIDBLogMACFilter :: 143
+2020-07-10 21:05:53.591  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.f.APIDBLogMACFilter              : response Time in Secs in APIDBLogMACFilter :: 0
+2020-07-10 21:05:53.591  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.f.APIDBLogMACFilter              : resStatus in APIDBLogMACFilter :: 401
+2020-07-10 21:05:53.598 ERROR LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.f.APIDBLogMACFilter              : Exception on resDateTime getting from res ponse payload
+2020-07-10 21:05:53.598 ERROR LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.d.APIDBOperation                 : In logAPIIntoDB
+2020-07-10 21:05:53.642  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2020-07-10 21:05:54.677  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2020-07-10 21:05:54.690 DEBUG LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.m.A.insert                       : ==>  Preparing: insert into API_REQ_RES_LOG ( UNIQUE_ID,DATETIME,REQ_URL,PROCESS_TIME,PROCESS_TIME_MS,RESPONSE,REQ_PAYLOAD,RES_PAYLOAD,REMOTE_ADDRESS, SESSION_ID,REQ_METHOD,IS_REQ_PAYLOAD_SKIP,IS_RES_PAYLOAD_SKIP,API_CODE, REQ_DATETIME_ON_HDR,RES_DATETIME_ON_HDR,ERROR_DETAILS,REMOTE_IP,REMOTE_IP_LOCATION ) values ( ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?, ?,?,? )
+2020-07-10 21:05:54.738 DEBUG LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.m.A.insert                       : ==> Parameters: 246e66e5-e4fe-44b5-a383-48d329edb1b7(String), 2020-07-10 21:05:53.61(Timestamp), /ezposadmin/v1.0/token(String), 0(Long), null, 401(String), (String), {"response":{"responseCode":"103","responseText":"Validation Error","resDateTime":"10072020210553"}}(String), localhost:9003(String), D27AD4429CD911D463B2D2EA16FF84C9(String), GET(String), N(String), N(String), 103(String), null, 10072020210553(String), null, 0:0:0:0:0:0:0:1(String), {}(String)
+2020-07-10 21:05:54.788 DEBUG LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.m.A.insert                       : <==    Updates: 1
+2020-07-10 21:05:54.806 ERROR LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.d.APIDBOperation                 : Out logAPIIntoDB
+2020-07-10 21:05:54.813  INFO LAPTOP-33UC8H82 - 246e66e5-e4fe-44b5-a383-48d329edb1b7 - D27AD4429CD911D463B2D2EA16FF84C9 - /ezposadmin/v1.0/token -- [nio-9003-exec-1] c.j.s.e.f.APIDBLogMACFilter              : End APIDBLogFilter doFilter
+2020-07-10 21:05:54.813  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-1] c.j.s.e.f.LogMDCFilter                   : End LogMDCFilter doFilter
+2020-07-10 21:06:14.114  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-3] c.j.s.e.f.LogMDCFilter                   : In LogMDCFilter doFilter Order 1
+2020-07-10 21:06:14.115  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.f.LogMDCFilter                   : LogMDCFilter do filter after assign the MDC records
+2020-07-10 21:06:14.115  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.f.APIDBLogMACFilter              : In APIDBLogFilter doFilter  Order 3
+2020-07-10 21:06:14.115  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.g.i.GeoServiceImpl               : GlobalConfiguration.geoFileLoaded :: true
+2020-07-10 21:06:14.115 ERROR LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.f.APIDBLogMACFilter              : com.maxmind.geoip2.exception.AddressNotFoundException: The address 0:0:0:0:0:0:0:1 is not in the database.
+2020-07-10 21:06:14.115  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.f.APIDBLogMACFilter              : Invalid Geo Locatoin Info
+2020-07-10 21:06:14.117  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.s.i.HeaderFilterServiceImpl      : in timeIntervalValidation
+2020-07-10 21:06:14.117  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.s.i.HeaderFilterServiceImpl      : objApiLog.getReqTime() --> '10072020210553'
+2020-07-10 21:06:14.117  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.s.i.HeaderFilterServiceImpl      : objApiLog.getServerTime() --> '10072020210614'
+2020-07-10 21:06:14.120  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.s.i.HeaderFilterServiceImpl      : diffMin --> '0'
+2020-07-10 21:06:14.120  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.s.i.HeaderFilterServiceImpl      : diffMin after abs --> '0'
+2020-07-10 21:06:14.120  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.s.i.HeaderFilterServiceImpl      : timeValidationInterval --> '5'
+2020-07-10 21:06:14.121 ERROR LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.s.i.HeaderFilterServiceImpl      : reqPayLoad is null or Empty
+2020-07-10 21:06:14.377  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] o.s.s.o.p.e.TokenEndpoint                : Handling error: HttpRequestMethodNotSupportedException, Request method 'GET' not supported
+2020-07-10 21:06:14.430  WARN LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-07-10 21:06:14.432  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.f.APIDBLogMACFilter              : response Time in milli Secs in APIDBLogMACFilter :: 316
+2020-07-10 21:06:14.432  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.f.APIDBLogMACFilter              : response Time in Secs in APIDBLogMACFilter :: 0
+2020-07-10 21:06:14.432  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.f.APIDBLogMACFilter              : resStatus in APIDBLogMACFilter :: 405
+2020-07-10 21:06:14.433 ERROR LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.f.APIDBLogMACFilter              : Exception on resDateTime getting from res ponse payload
+2020-07-10 21:06:14.433 ERROR LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.d.APIDBOperation                 : In logAPIIntoDB
+2020-07-10 21:06:14.436 DEBUG LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.m.A.insert                       : ==>  Preparing: insert into API_REQ_RES_LOG ( UNIQUE_ID,DATETIME,REQ_URL,PROCESS_TIME,PROCESS_TIME_MS,RESPONSE,REQ_PAYLOAD,RES_PAYLOAD,REMOTE_ADDRESS, SESSION_ID,REQ_METHOD,IS_REQ_PAYLOAD_SKIP,IS_RES_PAYLOAD_SKIP,API_CODE, REQ_DATETIME_ON_HDR,RES_DATETIME_ON_HDR,ERROR_DETAILS,REMOTE_IP,REMOTE_IP_LOCATION ) values ( ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?, ?,?,? )
+2020-07-10 21:06:14.437 DEBUG LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.m.A.insert                       : ==> Parameters: bd7b6d91-4ccd-47f3-baea-041c4abb45ef(String), 2020-07-10 21:06:14.433(Timestamp), /ezposadmin/v1.0/token(String), 0(Long), null, 405(String), (String), {"error":"method_not_allowed","error_description":"Request method &#39;GET&#39; not supported"}(String), localhost:9003(String), CEC6865004E45AACE309F993989E4959(String), GET(String), N(String), N(String), null, 10072020210553(String), 10072020210614(String), null, 0:0:0:0:0:0:0:1(String), {}(String)
+2020-07-10 21:06:14.441 DEBUG LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.m.A.insert                       : <==    Updates: 1
+2020-07-10 21:06:14.444 ERROR LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.d.APIDBOperation                 : Out logAPIIntoDB
+2020-07-10 21:06:14.446  INFO LAPTOP-33UC8H82 - bd7b6d91-4ccd-47f3-baea-041c4abb45ef - CEC6865004E45AACE309F993989E4959 - /ezposadmin/v1.0/token -- [nio-9003-exec-3] c.j.s.e.f.APIDBLogMACFilter              : End APIDBLogFilter doFilter
+2020-07-10 21:06:14.446  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-3] c.j.s.e.f.LogMDCFilter                   : End LogMDCFilter doFilter
+2020-07-10 21:08:08.614  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-6] c.j.s.e.f.LogMDCFilter                   : In LogMDCFilter doFilter Order 1
+2020-07-10 21:08:08.614  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.f.LogMDCFilter                   : LogMDCFilter do filter after assign the MDC records
+2020-07-10 21:08:08.614  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.f.APIDBLogMACFilter              : In APIDBLogFilter doFilter  Order 3
+2020-07-10 21:08:08.615  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.g.i.GeoServiceImpl               : GlobalConfiguration.geoFileLoaded :: true
+2020-07-10 21:08:08.615 ERROR LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.f.APIDBLogMACFilter              : com.maxmind.geoip2.exception.AddressNotFoundException: The address 0:0:0:0:0:0:0:1 is not in the database.
+2020-07-10 21:08:08.615  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.f.APIDBLogMACFilter              : Invalid Geo Locatoin Info
+2020-07-10 21:08:08.616  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.s.i.HeaderFilterServiceImpl      : in timeIntervalValidation
+2020-07-10 21:08:08.616  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.s.i.HeaderFilterServiceImpl      : objApiLog.getReqTime() --> '10072020210553'
+2020-07-10 21:08:08.616  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.s.i.HeaderFilterServiceImpl      : objApiLog.getServerTime() --> '10072020210808'
+2020-07-10 21:08:08.616  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.s.i.HeaderFilterServiceImpl      : diffMin --> '2'
+2020-07-10 21:08:08.616  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.s.i.HeaderFilterServiceImpl      : diffMin after abs --> '2'
+2020-07-10 21:08:08.616  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.s.i.HeaderFilterServiceImpl      : timeValidationInterval --> '5'
+2020-07-10 21:08:08.618  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.s.i.HeaderFilterServiceImpl      : reqDateTimeOnPayLoad is not present on request payload. Field Name might be wrong
+2020-07-10 21:08:08.618 ERROR LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.u.ServiceUtil                    : getFilterErrorMap Error :: 
+2020-07-10 21:08:08.618  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.f.APIDBLogMACFilter              : response Time in milli Secs in APIDBLogMACFilter :: 4
+2020-07-10 21:08:08.619  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.f.APIDBLogMACFilter              : response Time in Secs in APIDBLogMACFilter :: 0
+2020-07-10 21:08:08.619  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.f.APIDBLogMACFilter              : resStatus in APIDBLogMACFilter :: 401
+2020-07-10 21:08:08.619 ERROR LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.f.APIDBLogMACFilter              : Exception on resDateTime getting from res ponse payload
+2020-07-10 21:08:08.619 ERROR LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.d.APIDBOperation                 : In logAPIIntoDB
+2020-07-10 21:08:08.621 DEBUG LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.m.A.insert                       : ==>  Preparing: insert into API_REQ_RES_LOG ( UNIQUE_ID,DATETIME,REQ_URL,PROCESS_TIME,PROCESS_TIME_MS,RESPONSE,REQ_PAYLOAD,RES_PAYLOAD,REMOTE_ADDRESS, SESSION_ID,REQ_METHOD,IS_REQ_PAYLOAD_SKIP,IS_RES_PAYLOAD_SKIP,API_CODE, REQ_DATETIME_ON_HDR,RES_DATETIME_ON_HDR,ERROR_DETAILS,REMOTE_IP,REMOTE_IP_LOCATION ) values ( ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?, ?,?,? )
+2020-07-10 21:08:08.623 DEBUG LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.m.A.insert                       : ==> Parameters: f614940a-de48-4467-a959-bd4b5e8f3282(String), 2020-07-10 21:08:08.619(Timestamp), /ezposadmin/v1.0/token(String), 0(Long), null, 401(String), grant_type=password&username=admin&password=jwtpass(String), {"response":{"responseCode":"111","responseText":"Req. Datetime not avalibale on Request","resDateTime":"10072020210808"}}(String), localhost:9003(String), 75DA7CF5AFA1088BCA90445D183BE480(String), GET(String), N(String), N(String), 111(String), 10072020210553(String), 10072020210808(String), null, 0:0:0:0:0:0:0:1(String), {}(String)
+2020-07-10 21:08:08.628 DEBUG LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.m.A.insert                       : <==    Updates: 1
+2020-07-10 21:08:08.631 ERROR LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.d.APIDBOperation                 : Out logAPIIntoDB
+2020-07-10 21:08:08.633  INFO LAPTOP-33UC8H82 - f614940a-de48-4467-a959-bd4b5e8f3282 - 75DA7CF5AFA1088BCA90445D183BE480 - /ezposadmin/v1.0/token -- [nio-9003-exec-6] c.j.s.e.f.APIDBLogMACFilter              : End APIDBLogFilter doFilter
+2020-07-10 21:08:08.634  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-6] c.j.s.e.f.LogMDCFilter                   : End LogMDCFilter doFilter
+2020-07-10 21:08:16.359  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-7] c.j.s.e.f.LogMDCFilter                   : In LogMDCFilter doFilter Order 1
+2020-07-10 21:08:16.359  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.f.LogMDCFilter                   : LogMDCFilter do filter after assign the MDC records
+2020-07-10 21:08:16.359  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.f.APIDBLogMACFilter              : In APIDBLogFilter doFilter  Order 3
+2020-07-10 21:08:16.360  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.g.i.GeoServiceImpl               : GlobalConfiguration.geoFileLoaded :: true
+2020-07-10 21:08:16.360 ERROR LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.f.APIDBLogMACFilter              : com.maxmind.geoip2.exception.AddressNotFoundException: The address 0:0:0:0:0:0:0:1 is not in the database.
+2020-07-10 21:08:16.360  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.f.APIDBLogMACFilter              : Invalid Geo Locatoin Info
+2020-07-10 21:08:16.360  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.s.i.HeaderFilterServiceImpl      : in timeIntervalValidation
+2020-07-10 21:08:16.360  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.s.i.HeaderFilterServiceImpl      : objApiLog.getReqTime() --> '10072020210808'
+2020-07-10 21:08:16.360  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.s.i.HeaderFilterServiceImpl      : objApiLog.getServerTime() --> '10072020210816'
+2020-07-10 21:08:16.360  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.s.i.HeaderFilterServiceImpl      : diffMin --> '0'
+2020-07-10 21:08:16.360  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.s.i.HeaderFilterServiceImpl      : diffMin after abs --> '0'
+2020-07-10 21:08:16.360  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.s.i.HeaderFilterServiceImpl      : timeValidationInterval --> '5'
+2020-07-10 21:08:16.360  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.s.i.HeaderFilterServiceImpl      : reqDateTimeOnPayLoad is not present on request payload. Field Name might be wrong
+2020-07-10 21:08:16.361 ERROR LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.u.ServiceUtil                    : getFilterErrorMap Error :: 
+2020-07-10 21:08:16.361  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.f.APIDBLogMACFilter              : response Time in milli Secs in APIDBLogMACFilter :: 1
+2020-07-10 21:08:16.361  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.f.APIDBLogMACFilter              : response Time in Secs in APIDBLogMACFilter :: 0
+2020-07-10 21:08:16.361  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.f.APIDBLogMACFilter              : resStatus in APIDBLogMACFilter :: 401
+2020-07-10 21:08:16.361 ERROR LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.f.APIDBLogMACFilter              : Exception on resDateTime getting from res ponse payload
+2020-07-10 21:08:16.361 ERROR LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.d.APIDBOperation                 : In logAPIIntoDB
+2020-07-10 21:08:16.362 DEBUG LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.m.A.insert                       : ==>  Preparing: insert into API_REQ_RES_LOG ( UNIQUE_ID,DATETIME,REQ_URL,PROCESS_TIME,PROCESS_TIME_MS,RESPONSE,REQ_PAYLOAD,RES_PAYLOAD,REMOTE_ADDRESS, SESSION_ID,REQ_METHOD,IS_REQ_PAYLOAD_SKIP,IS_RES_PAYLOAD_SKIP,API_CODE, REQ_DATETIME_ON_HDR,RES_DATETIME_ON_HDR,ERROR_DETAILS,REMOTE_IP,REMOTE_IP_LOCATION ) values ( ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?, ?,?,? )
+2020-07-10 21:08:16.363 DEBUG LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.m.A.insert                       : ==> Parameters: 6da6fd10-298a-45de-b5a1-9f9e3d06d79a(String), 2020-07-10 21:08:16.361(Timestamp), /ezposadmin/v1.0/token(String), 0(Long), null, 401(String), grant_type=password&username=admin&password=jwtpass(String), {"response":{"responseCode":"111","responseText":"Req. Datetime not avalibale on Request","resDateTime":"10072020210816"}}(String), localhost:9003(String), B06117266FBB01E3C5AE0BAF02FCB85B(String), GET(String), N(String), N(String), 111(String), 10072020210808(String), 10072020210816(String), null, 0:0:0:0:0:0:0:1(String), {}(String)
+2020-07-10 21:08:16.365 DEBUG LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.m.A.insert                       : <==    Updates: 1
+2020-07-10 21:08:16.367 ERROR LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.d.APIDBOperation                 : Out logAPIIntoDB
+2020-07-10 21:08:16.368  INFO LAPTOP-33UC8H82 - 6da6fd10-298a-45de-b5a1-9f9e3d06d79a - B06117266FBB01E3C5AE0BAF02FCB85B - /ezposadmin/v1.0/token -- [nio-9003-exec-7] c.j.s.e.f.APIDBLogMACFilter              : End APIDBLogFilter doFilter
+2020-07-10 21:08:16.368  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-7] c.j.s.e.f.LogMDCFilter                   : End LogMDCFilter doFilter
+2020-07-10 21:08:23.115  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-8] c.j.s.e.f.LogMDCFilter                   : In LogMDCFilter doFilter Order 1
+2020-07-10 21:08:23.116  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.f.LogMDCFilter                   : LogMDCFilter do filter after assign the MDC records
+2020-07-10 21:08:23.116  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.f.APIDBLogMACFilter              : In APIDBLogFilter doFilter  Order 3
+2020-07-10 21:08:23.116  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.g.i.GeoServiceImpl               : GlobalConfiguration.geoFileLoaded :: true
+2020-07-10 21:08:23.116 ERROR LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.f.APIDBLogMACFilter              : com.maxmind.geoip2.exception.AddressNotFoundException: The address 0:0:0:0:0:0:0:1 is not in the database.
+2020-07-10 21:08:23.116  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.f.APIDBLogMACFilter              : Invalid Geo Locatoin Info
+2020-07-10 21:08:23.116  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.s.i.HeaderFilterServiceImpl      : in timeIntervalValidation
+2020-07-10 21:08:23.116  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.s.i.HeaderFilterServiceImpl      : objApiLog.getReqTime() --> '10072020210816'
+2020-07-10 21:08:23.116  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.s.i.HeaderFilterServiceImpl      : objApiLog.getServerTime() --> '10072020210823'
+2020-07-10 21:08:23.116  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.s.i.HeaderFilterServiceImpl      : diffMin --> '0'
+2020-07-10 21:08:23.116  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.s.i.HeaderFilterServiceImpl      : diffMin after abs --> '0'
+2020-07-10 21:08:23.116  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.s.i.HeaderFilterServiceImpl      : timeValidationInterval --> '5'
+2020-07-10 21:08:23.116  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.s.i.HeaderFilterServiceImpl      : reqDateTimeOnPayLoad is not present on request payload. Field Name might be wrong
+2020-07-10 21:08:23.117 ERROR LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.u.ServiceUtil                    : getFilterErrorMap Error :: 
+2020-07-10 21:08:23.117  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.f.APIDBLogMACFilter              : response Time in milli Secs in APIDBLogMACFilter :: 0
+2020-07-10 21:08:23.117  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.f.APIDBLogMACFilter              : response Time in Secs in APIDBLogMACFilter :: 0
+2020-07-10 21:08:23.117  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.f.APIDBLogMACFilter              : resStatus in APIDBLogMACFilter :: 401
+2020-07-10 21:08:23.117 ERROR LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.f.APIDBLogMACFilter              : Exception on resDateTime getting from res ponse payload
+2020-07-10 21:08:23.117 ERROR LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.d.APIDBOperation                 : In logAPIIntoDB
+2020-07-10 21:08:23.117 DEBUG LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.m.A.insert                       : ==>  Preparing: insert into API_REQ_RES_LOG ( UNIQUE_ID,DATETIME,REQ_URL,PROCESS_TIME,PROCESS_TIME_MS,RESPONSE,REQ_PAYLOAD,RES_PAYLOAD,REMOTE_ADDRESS, SESSION_ID,REQ_METHOD,IS_REQ_PAYLOAD_SKIP,IS_RES_PAYLOAD_SKIP,API_CODE, REQ_DATETIME_ON_HDR,RES_DATETIME_ON_HDR,ERROR_DETAILS,REMOTE_IP,REMOTE_IP_LOCATION ) values ( ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?, ?,?,? )
+2020-07-10 21:08:23.119 DEBUG LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.m.A.insert                       : ==> Parameters: 645c109d-cae0-4677-8124-c0c6177d787c(String), 2020-07-10 21:08:23.117(Timestamp), /ezposadmin/v1.0/token(String), 0(Long), null, 401(String), grant_type=password&username=admin&password=jwtpass(String), {"response":{"responseCode":"111","responseText":"Req. Datetime not avalibale on Request","resDateTime":"10072020210823"}}(String), localhost:9003(String), C058FCBEEF3FC885AF8584DAED0A88D4(String), GET(String), N(String), N(String), 111(String), 10072020210816(String), 10072020210823(String), null, 0:0:0:0:0:0:0:1(String), {}(String)
+2020-07-10 21:08:23.121 DEBUG LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.m.A.insert                       : <==    Updates: 1
+2020-07-10 21:08:23.123 ERROR LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.d.APIDBOperation                 : Out logAPIIntoDB
+2020-07-10 21:08:23.124  INFO LAPTOP-33UC8H82 - 645c109d-cae0-4677-8124-c0c6177d787c - C058FCBEEF3FC885AF8584DAED0A88D4 - /ezposadmin/v1.0/token -- [nio-9003-exec-8] c.j.s.e.f.APIDBLogMACFilter              : End APIDBLogFilter doFilter
+2020-07-10 21:08:23.124  INFO LAPTOP-33UC8H82 -  -  -  -- [nio-9003-exec-8] c.j.s.e.f.LogMDCFilter                   : End LogMDCFilter doFilter

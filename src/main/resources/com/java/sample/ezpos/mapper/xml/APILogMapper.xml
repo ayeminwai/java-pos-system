@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.java.sample.ezpos.mapper.APILogMapper" >
+  
+  <resultMap id="BaseResultMap" type="com.java.sample.ezpos.model.APILog" >
+    <id column="API_LOGID" property="apiLogId" jdbcType="VARCHAR" />
+    <result column="UNIQUE_ID" property="uniqueId" jdbcType="VARCHAR" />
+    <result column="DATETIME" property="dateTime" jdbcType="TIMESTAMP" />
+    <result column="REQ_URL" property="reqUrl" jdbcType="VARCHAR" />
+    <result column="PROCESS_TIME" property="processTime" jdbcType="NUMERIC" />
+    <result column="PROCESS_TIME_MS" property="processTimeMs" jdbcType="NUMERIC" />
+    <result column="RESPONSE" property="response" jdbcType="VARCHAR" />
+    <result column="REQ_PAYLOAD" property="reqPayLoad" jdbcType="VARCHAR" />
+    <result column="RES_PAYLOAD" property="resPayLoad" jdbcType="VARCHAR" />
+    <result column="REMOTE_ADDRESS" property="remoteAddress" jdbcType="VARCHAR" />
+    <result column="SESSION_ID" property="sessionId" jdbcType="VARCHAR" />
+    <result column="REQ_METHOD" property="reqMethod" jdbcType="VARCHAR" />
+    <result column="IS_REQ_PAYLOAD_SKIP" property="isReqPayLoadSkip" jdbcType="VARCHAR" />
+    <result column="IS_RES_PAYLOAD_SKIP" property="isResPayLoadSkip" jdbcType="VARCHAR" />
+    <result column="API_CODE" property="apiCode" jdbcType="VARCHAR" />
+    <result column="REQ_DATETIME_ON_HDR" property="reqTime" jdbcType="VARCHAR" />
+    <result column="RES_DATETIME_ON_HDR" property="resTime" jdbcType="VARCHAR" />
+    <result column="ERROR_DETAILS" property="errorDetail" jdbcType="VARCHAR" />
+    <result column="REMOTE_IP" property="remoteIp" jdbcType="VARCHAR" />
+    <result column="REMOTE_IP_LOCATION" property="remoteIpLocation" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <insert id="insert" parameterType="com.java.sample.ezpos.model.APILog" >
+    insert into 
+    	API_REQ_RES_LOG 
+    	(
+    	UNIQUE_ID,DATETIME,REQ_URL,PROCESS_TIME,PROCESS_TIME_MS,RESPONSE,REQ_PAYLOAD,RES_PAYLOAD,REMOTE_ADDRESS,
+    	SESSION_ID,REQ_METHOD,IS_REQ_PAYLOAD_SKIP,IS_RES_PAYLOAD_SKIP,API_CODE,
+    	REQ_DATETIME_ON_HDR,RES_DATETIME_ON_HDR,ERROR_DETAILS,REMOTE_IP,REMOTE_IP_LOCATION
+    	)
+    values 
+    	(
+    	#{uniqueId,jdbcType=VARCHAR}, #{dateTime,jdbcType=VARCHAR},#{reqUrl,jdbcType=VARCHAR}, #{processTime,jdbcType=NUMERIC}, 
+    	#{processTimeMs,jdbcType=NUMERIC}, #{response,jdbcType=VARCHAR}, #{reqPayLoad,jdbcType=VARCHAR}, #{resPayLoad,jdbcType=VARCHAR}, 
+    	#{remoteAddress,jdbcType=VARCHAR}, #{sessionId,jdbcType=VARCHAR}, #{reqMethod,jdbcType=VARCHAR}, #{isReqPayLoadSkip,jdbcType=VARCHAR}, 
+    	#{isResPayLoadSkip,jdbcType=VARCHAR},#{apiCode,jdbcType=VARCHAR},#{reqTime,jdbcType=VARCHAR},#{resTime,jdbcType=VARCHAR},
+    	#{errorDetail,jdbcType=VARCHAR},#{remoteIp,jdbcType=VARCHAR},#{remoteIpLocation,jdbcType=VARCHAR}
+        )
+  </insert>
+  
+</mapper>

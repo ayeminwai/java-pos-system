@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.java.sample.ezpos.mapper.UserDetailsMapper" >
+  <resultMap id="BaseResultMap" type="com.java.sample.ezpos.model.UserDetails" >
+   	<id column="USER_ID" property="userId" jdbcType="NUMERIC" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="DOB" property="dob" jdbcType="TIMESTAMP" />
+    <result column="GENDER" property="gender" jdbcType="VARCHAR" />
+    <result column="MOBILE_NO" property="mobileNo" jdbcType="VARCHAR" />
+    <result column="PRIMARY_ADDRESS" property="primaryAddress" jdbcType="VARCHAR" />
+    <result column="CURRENT_ADDRESS" property="currentAddress" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+    <result column="DATETIME" property="datetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    USER_ID, NAME, DOB, GENDER, MOBILE_NO, PRIMARY_ADDRESS, CURRENT_ADDRESS, STATUS, DATETIME
+  </sql>
+  `
+  <select id="insert" parameterType="com.java.sample.ezpos.model.UserDetails">
+    insert into 
+    	USER_DETAILS 
+    	(
+    		<include refid="Base_Column_List" />
+    	)
+    values 
+    	(
+    	#{userId,jdbcType=NUMERIC}, #{name,jdbcType=VARCHAR},#{dob,jdbcType=TIMESTAMP}, #{gender,jdbcType=VARCHAR}, 
+    	#{mobileNo,jdbcType=VARCHAR}, #{primaryAddress,jdbcType=VARCHAR}, #{currentAddress,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+    	#{datetime,jdbcType=TIMESTAMP}
+        )
+  </select>
+  
+</mapper>
