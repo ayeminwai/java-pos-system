@@ -18,4 +18,8 @@ public class StringUtil {
 			return str.trim();
 		}
 	}
+	
+	public static void main(String[] args) {
+		System.out.println(checkNull(""));
+	}
 }
